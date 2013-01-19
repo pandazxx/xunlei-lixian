@@ -16,9 +16,9 @@ basic_commands = [
 ]
 
 def join_commands(commands):
-	n = max(len(x[0]) for x in commands)
-	n = max(n, 10)
-	return ''.join(' %%-%ds %%s\n' % n % (k, h) for (k, h) in commands)
+    n = max(len(x[0]) for x in commands)
+    n = max(n, 10)
+    return ''.join(' %%-%ds %%s\n' % n % (k, h) for (k, h) in commands)
 
 basic_usage = '''python lixian_cli.py <command> [<args>]
 
@@ -29,7 +29,7 @@ extended_usage = ''
 
 # lx
 def usage():
-	return basic_usage + '''
+    return basic_usage + '''
 Use 'python lixian_cli.py help' for details.
 Use 'python lixian_cli.py help <command>' for more information on a specific command.
 Check https://github.com/iambus/xunlei-lixian for detailed (and Chinese) doc.'''
@@ -49,13 +49,13 @@ help = help_help
 # lx help
 # lx -h
 def welcome_help():
-	return '''Python script for Xunlei cloud.
+    return '''Python script for Xunlei cloud.
 
 Basic usage:
 ''' + basic_usage + extended_usage + '\n' + help_help
 
 def examples():
-	return '''python lixian_cli.py login "Your Xunlei account" "Your password"
+    return '''python lixian_cli.py login "Your Xunlei account" "Your password"
 python lixian_cli.py login "Your password"
 python lixian_cli.py login
 
@@ -111,11 +111,11 @@ Please check https://github.com/iambus/xunlei-lixian for detailed (and Chinese) 
 '''
 
 def readme():
-	import sys
-	import os.path
-	doc = os.path.join(sys.path[0], 'README.md')
-	with open(doc) as txt:
-		return txt.read().decode('utf-8')
+    import sys
+    import os.path
+    doc = os.path.join(sys.path[0], 'README.md')
+    with open(doc) as txt:
+        return txt.read().decode('utf-8')
 
 
 login    = '''python lixian_cli.py login <username> <password>
@@ -146,7 +146,7 @@ Options:
                                  Default: false.
  --torrent         --bt          Treat all arguments as torrent files (e.g. local torrent file, torrent http url, torrent info hash)
                                  Default: false.
- --all                           Download all tasks. This option will be ignored if specific download URLs or task ids can be found. 
+ --all                           Download all tasks. This option will be ignored if specific download URLs or task ids can be found.
                                  Default: false.
  --hash                          When this option is false (--no-hash), never do full hash, but a minimal hash will be performed (supposed to be very fast).
                                  Default: true.
@@ -292,5 +292,3 @@ logout   = '''python lixian_cli.py logout
 
 logout from Xunlei cloud
 '''
-
-
